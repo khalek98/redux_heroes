@@ -1,0 +1,49 @@
+{
+  "heroes": [
+    {
+      "id": "f54209c4-ba65-4c9b-9049-5f75aed6e1ea",
+      "name": "akjwbdkjawbd",
+      "description": "fire",
+      "element": "fire"
+    },
+    {
+      "id": "af48a994-c2d0-4b4b-9842-936f8174eb39",
+      "name": "Халек",
+      "description": ".",
+      "element": ""
+    },
+    {
+      "id": "3d1ac720-c4d0-431c-a53a-e355451e962a",
+      "name": "Water-Man",
+      "description": "Wind)))",
+      "element": "wind"
+    }
+  ],
+  "filters": [
+    {
+      "name": "all",
+      "label": "All",
+      "className": "btn-outline-dark"
+    },
+    {
+      "name": "fire",
+      "label": "Fire",
+      "className": "btn-danger"
+    },
+    {
+      "name": "water",
+      "label": "Water",
+      "className": "btn-primary"
+    },
+    {
+      "name": "wind",
+      "label": "Wind",
+      "className": "btn-success"
+    },
+    {
+      "name": "earth",
+      "label": "Earth",
+      "className": "btn-secondary"
+    }
+  ]
+}
