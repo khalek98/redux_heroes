@@ -1,11 +1,11 @@
 # This is test REACT-project with hero admin panel!<br>
-## On this project, I practiced using the following REDUX technologies:<br>
+__On this project, I practiced using the following REDUX technologies:__
 - bindActionCreators
 - connect
 - createSelector
 - reselect
 - combineReducers
-- __Redux Toolkit (bold)__
+- __Redux Toolkit__
     - nanoid
     - configureStore
     - createAction
