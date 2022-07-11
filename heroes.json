@@ -23,30 +23,41 @@
       "name": "Windrunner",
       "description": "run like wind",
       "element": "wind"
+    },
+    {
+      "id": "xXoV1FIHfQ26J4G2wAhqI",
+      "name": "Semen",
+      "description": "log",
+      "element": "wind"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "All",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Fire",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Water",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Wind",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Earth",
       "className": "btn-secondary"
