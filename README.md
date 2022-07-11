@@ -12,6 +12,7 @@ __On this project, I practiced using the following REDUX technologies:__
     - createReducer
     - createSlice
     - createAsyncThunk
+    - createEntityAdapter
 ### Hooks:
 - useSelector
 - useDispatch
