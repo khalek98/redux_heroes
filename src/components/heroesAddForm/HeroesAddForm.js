@@ -1,21 +1,20 @@
-import { useHttp } from "../../hooks/http.hook";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import store from "../../store";
 
-import { heroCreated } from "../heroesList/heroesSlice";
 import { selectAll } from "../heroesFilters/filtersSlice";
+import { useCreateHeroMutation } from "../api/apiSlice";
  
 const HeroesAddForm = () => {
     const [heroName, setHeroName] = useState('');
     const [heroDescr, setHeroDescr] = useState('');
     const [heroElement, setHeroElement] = useState('');
 
+    const [createHero, {isLoading}] = useCreateHeroMutation();
+
     const {filterLoadingStatus} = useSelector(state => state.filters);
     const filters = selectAll(store.getState())
-    const dispatch = useDispatch();
-    const { request } = useHttp();
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -27,17 +26,15 @@ const HeroesAddForm = () => {
             element: heroElement
         }
 
-        request('http://localhost:3001/heroes', 'POST', JSON.stringify(newHero))
-            .then(dispatch(heroCreated(newHero)))
-            .catch(err => console.log(err))
+        createHero(newHero).unwrap();
 
-            setHeroName('');
-            setHeroDescr('');
-            setHeroElement('');
+        setHeroName('');
+        setHeroDescr('');
+        setHeroElement('');
     }
 
     const renderFilters = (filters, status) => {
-        if (status === "loading") {
+        if (isLoading) {
             return <option>Loadnig elements...</option>
         } else if (status === 'error') {
             return <option>Loading error</option>
@@ -45,7 +42,7 @@ const HeroesAddForm = () => {
 
         if (filters && filters.length > 0) {
             return filters.map(({name, label}) => {
-                if (name === 'all') return;
+                if (name === 'all') return null;
 
                 return <option key={name} value={name}>{label}</option>
             })

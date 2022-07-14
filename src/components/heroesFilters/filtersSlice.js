@@ -21,8 +21,7 @@ const filtersSlice = createSlice({
     initialState,
     reducers: {
         filtersChanged: (state, action) => {
-            state.activeFilter = action.payload;
-            
+            state.activeFilter = action.payload;   
         }
     },
     extraReducers: (builder) => {
@@ -31,7 +30,6 @@ const filtersSlice = createSlice({
                 state.filterLoadingStatus = 'loading';
             })
             .addCase(fetchFilters.fulfilled, (state, action) => {
-                // state.filters = action.payload;
                 state.filterLoadingStatus = 'idle';
                 filtersAdapter.setAll(state, action.payload)
             })
