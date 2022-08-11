@@ -25,6 +25,7 @@ const HeroesList = () => {
         request(`http://localhost:3001/heroes/${id}`, 'DELETE')
             .then(dispatch(heroDeleted(id)))
             .catch(err => console.log(err))
+        // eslint-disable-next-line
     }, [request])
     
     if (heroesLoadingStatus === "loading") {
